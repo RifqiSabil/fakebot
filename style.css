@@ -1,0 +1,110 @@
+*, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#answer{
+    border: none;
+    background-color: #eaeaea;
+    padding: 10px;
+    width: 250px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#question{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #eaeaea;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+button{
+    border: none;
+    background-color: lightseagreen;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 5px;
+    font-weight: 600;
+    height: 40px;
+    margin-top: 10px;
+    color: #eaeaea;
+    transition: .5s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: seagreen;
+}
+
+#loading{
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 45%;
+    left: 45%;
+    z-index: 10;
+    /* We can also write down animation syntax like below
+    animation-name: spin;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    animation: .5s spin infinite linear;
+}
+
+@keyframes spin {
+    0%{
+        border-left: 5px solid lightslategrey;
+        border-top: 10px solid  lightseagreen ;
+        border-right: 5px solid lightsalmon;
+        transform: rotate(0deg);
+    }
+    25%{
+        border-left: 5px solid lightseagreen;
+        border-top: 10px solid  lightsalmon ;
+        border-right: 5px solid lightgreen;
+        transform: rotate(90deg);
+    }
+    50%{
+        border-left: 5px solid lightsalmon;
+        border-top: 10px solid  lightgreen ;
+        border-right: 5px solid lightslategrey;
+        transform: rotate(180deg);
+    }
+    75%{
+        border-left: 5px solid lightgreen;
+        border-top: 10px solid  lightslategrey;
+        border-left: 5px solid lightseagreen;
+        transform: rotate(270deg);
+    }
+    100%{
+        border-left: 5px solid lightslategrey;
+        border-top: 10px solid  lightseagreen ;
+        border-right: 5px solid lightsalmon;
+        transform: rotate(360deg);
+    }
+}
